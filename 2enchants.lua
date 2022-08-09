@@ -1,3 +1,5 @@
+local RunService = game:GetService("RunService")
+
 local buy = {
     [1] = 0,
     [2] = "EnchanterServer",
