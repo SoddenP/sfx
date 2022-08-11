@@ -1,4 +1,5 @@
 local RunService = game:GetService("RunService")
+amt = amt or 50
 
 local buyuluck = {
     [1] = 0,
@@ -44,7 +45,7 @@ lockcount = 0
 lockspurchased = false
 local connection
 function getdatpeppahoffdere()
-    if lockcount < 50 then
+    if lockcount < amt then
         lockcount = lockcount + 1
         game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(buyuluck))   
         game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(buyluck)) 
@@ -63,7 +64,7 @@ lockcount = 0
 lockspurchased = false
 local connection2
 function getdatpeppahoffdere2()
-    if lockcount < 50 then
+    if lockcount < amt then
         lockcount = lockcount + 1
         game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(useuluck))   
         game:GetService("ReplicatedStorage").Framework.RemoteFunction:InvokeServer(unpack(useluck)) 
