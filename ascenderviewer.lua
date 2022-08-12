@@ -1,4 +1,5 @@
 active = true
+key = key or "Q"
 local UserInputService = game:GetService("UserInputService")
 function update()
    for i=1,3 do
