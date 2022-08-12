@@ -1,3 +1,5 @@
+active = true
+local UserInputService = game:GetService("UserInputService")
 function update()
    for i=1,3 do
        pcall(function()
@@ -17,6 +19,9 @@ function update()
            for i, v in pairs(lookat:Clone():GetChildren()) do
                v.Parent = frame
            end
+           if not active then
+               frame.Visible = false
+           end
        end)
    end
 end
@@ -27,6 +32,17 @@ function remove()
        end
    end
 end
+UserInputService.InputBegan:Connect(function(input, typing)
+    if not typing then
+        if input.KeyCode == Enum.KeyCode[key] then
+            if active then
+                active = false
+            else
+                active = true
+            end
+        end
+    end
+end)
 while true do
    if (game:GetService("Workspace")[game.Players.LocalPlayer.Name.."'s Base"].Ascender1.Item.Value) or (game:GetService("Workspace")[game.Players.LocalPlayer.Name.."'s Base"].Ascender2.Item.Value) or (game:GetService("Workspace")[game.Players.LocalPlayer.Name.."'s Base"].Ascender3.Item.Value) then
        update()
